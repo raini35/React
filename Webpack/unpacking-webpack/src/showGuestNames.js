@@ -1,4 +1,8 @@
-var ShowGuestNames = function () {
+var GuestList = require('./guestList.js');
+require('./style.css');
+
+
+module.exports  = function () {
 	var ul = document.createElement('ul'); 
 	GuestList.map(function(guest) {
 	//	var email = document.createTextNode(guest.email); 

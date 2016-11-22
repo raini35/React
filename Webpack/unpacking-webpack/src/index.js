@@ -1,3 +1,3 @@
-(function() {
-	ShowGuestNames(); 
-})(); 
+var ShowGuestNames = require('./showGuestNames.js');
+
+ShowGuestNames();

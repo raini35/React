@@ -1,4 +1,4 @@
-var GuestList = [
+module.exports  = [
 	{
 		"name": "Rainier Go", 
 		"phone": "832-475-6489", 
