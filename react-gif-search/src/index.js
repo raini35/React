@@ -11,6 +11,8 @@ class App extends React.Component {
     this.state = {
       gifs: []
     }
+    
+    this.handleTermChange = this.handleTermChange.bind(this); 
   }
 
   handleTermChange(term) {
