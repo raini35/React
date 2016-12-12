@@ -1,0 +1,81 @@
+class Button extends React.Component {
+  constructor(props) {
+    super(props); 
+    this.state = {isToggleOn: true, token: '-'}; 
+    this.handleChange = this.handleChange.bind(this); 
+  }
+  
+  
+  handleChange() {
+    if(this.state.token == '-') {
+       if(this.props.player == 1){
+          this.setState({token: 'X'});
+        }else {
+          this.setState({token: 'O'});
+        }
+    }
+  }
+  
+  render(){
+    return(
+      <button onClick={this.handleChange}>
+        {this.state.token}</button>
+    );
+    
+  }
+    
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {currentPlayer: 1};  
+    this.handlePlayerChange = this.handlePlayerChange.bind(this);
+  }
+  
+  handlePlayerChange() {
+    if(this.state.currentPlayer == 1 ) {
+      this.setState({currentPlayer: 0});  
+    } else {
+      this.setState({currentPlayer: 1});
+    } 
+  }
+  
+
+  render() {
+    const player = ["Bob", "Joe"]
+    return(
+      <div>
+        <button onClick={this.handlePlayerChange}>Current Player</button>
+        <p>{player[this.state.currentPlayer]}</p>
+        <p></p>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <p></p>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <p></p>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <p></p>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <Button player={this.state.currentPlayer} />
+        <Button player={this.state.currentPlayer}/>
+        <p></p>
+        <button onClick={this.handleReset}>Reset Game</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
