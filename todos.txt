@@ -1,3 +1,9 @@
-//Figure out how to make a database
-//Get familiar with React
-//Do more coding challenges
+class ShoppingList extends React.Component {
+
+
+}
+
+class WorkoutTracker extends React.Component {
+	
+}
+
