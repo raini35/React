@@ -7,12 +7,48 @@ class WorkoutTracker extends React.Component {
 	
 }
 
-class Square extends React.Component {
-	
+class Square(props) {
+	return (
+		<button className="square" onClick={ () => props.onClick()}>
+			{props.value}
+		</button>
+	);
 }
 
 class Board extends React.Component {
-
+	constructor() {
+		super(); 
+		this.state = { squares: Array(9).fill(null), 
+						xIsNext: true, }; 
+	}
+	
+	handleClick(i) {
+		const squares = this.state.squares.slice(); 
+		squares[i] = this.state.xIsNext ? 'X' : 'O'; 
+		this.setState(
+			{squares: squares, 
+			 xIsNext: !this.state.xIsNext}); 
+	}
+	
+	rendreSquare(i) {
+		<Square value={this.state.squares[i]} onClick = handleClick(i)/>
+	}	
+	
+	render() {
+		return (
+		renderSquare(0); 
+		renderSquare(1); 
+		renderSquare(2); 
+		<br>
+		renderSquare(3); 
+		renderSquare(4); 
+		renderSquare(5); 
+		<br>
+		renderSquare(6); 
+		renderSquare(7); 
+		renderSquare(8); 		
+		); 
+	}
 }
 
 class Game extends React.Component {
