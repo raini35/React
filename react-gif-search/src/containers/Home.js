@@ -7,7 +7,7 @@ import GifModal from '../components/GifModal';
 import SearchBar from '../components/SearchBar'; 
 import '../styles/app.css'; 
 
-class App extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <div>
@@ -36,7 +36,7 @@ function mapDispatchToProps(dispatch) {
 	}; 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 //mapStateToProps passes data to our container from our store
 //STORE -> CONTAINER 
